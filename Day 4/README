@@ -1,0 +1,17 @@
+# Rock Paper Scissors
+
+### Instructions
+Make a rock, paper, scissors game.
+
+I was given a python file consisting of only the ASCII art for the hand signals already saved to a corresponding variable: rock, paper, and scissors.
+
+I was instructed to start the game by asking the player:
+"What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors."
+
+From there I had to write code to solve for the following scenarios:
+
+How will I store the user's input.
+How will I generate a random choice for the computer.
+How will I compare the user's and the computer's choice to determine the winner (or a draw).
+And also how will I give feedback to the player.
+
