@@ -6,7 +6,7 @@ On [Reeborg](https://reeborg.ca/reeborg.html?lang=en&mode=python&menu=worlds%2Fm
 
 ### Code Written on Reeborg
 
-'''
+```
 def turn_right():
     turn_left()
     turn_left()
@@ -22,4 +22,4 @@ while not at_goal():
         turn_right()
         if wall_in_front() == 0:
             move()
-'''
+```
