@@ -26,14 +26,14 @@ operations = {
 }
 
 def calculator():
-    num1 = int(input("What's the first number?: "))
+    num1 = float(input("What's the first number?: "))
     for i in operations:
             print(i)
     calculating = True
     
     while calculating:
         operation_symbol = input("Pick an operation: ")
-        num2 = int(input("What's the second number?: "))
+        num2 = float(input("What's the second number?: "))
         calc_funct = operations[operation_symbol]
         answer = calc_funct(num1, num2)
         
