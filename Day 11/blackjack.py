@@ -9,21 +9,24 @@ user_score = 0
 dealer_score = 0
 cards = [11,2,3,4,5,6,7,8,9,10,10,10,10]
 
-
+# Function to get a new card
 def new_card():
-    x = random.randint(0, len(cards))
+    x = random.choice(cards)
     return x
 
+# Function to gather some of all items in a list.
 def sum(list):
     total = 0
     for i in range(len(list)):
         total += list[i]
     return total
 
+# Function to add a new card to user's hand
 def add_user_card():
-    x = random.randint(0, len(cards))
+    x = random.choice(cards)
     user_cards.append(cards[x])
 
+# Function to check user score versus the dealer's and to print the results
 def check_score():
     if user_score == dealer_score:
         print("Draw!")
@@ -36,6 +39,7 @@ def check_score():
     else:
         print("You lose.")
 
+# Main blackjack function
 def blackjack():
     print(logo)
     global user_score 
