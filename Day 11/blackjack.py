@@ -28,7 +28,7 @@ def check_score():
     if user_score == dealer_score:
         print("Draw!")
     elif user_score == 21:
-        print("You win!")
+        print("You win with a BlackJack!")
     elif user_score > dealer_score and user_score < 21:
         print("You win!")
     elif dealer_score > 21 and user_score < 21:
@@ -56,6 +56,13 @@ def blackjack():
         print(f"Your cards: {user_cards}, your score: {user_score}")
         print(f"The first dealer card is: {dealer_cards[0]}")
 
+        # Convert Aces from 11 to 1 if score is greater than 10
+        for i in user_cards:
+            if user_score > 10 and user_cards[i] == 11:
+                user_cards[i] == 1
+                user_score = sum(user_cards)
+
+        # End game if user score has busted or is equal to 21 for a blackjack
         if user_score > 21:
             dealer_score = sum(dealer_cards)
             print(f"Your final hand is: {user_cards}, your final score: {user_score}")
