@@ -1,5 +1,6 @@
 import random
 from os import system
+from xmlrpc.client import FastMarshaller
 from art import logo
 
 # Set variables for game
@@ -42,10 +43,11 @@ def check_score():
 # Main blackjack function
 def blackjack():
     print(logo)
-    global user_score 
-    global dealer_score
+    
     global user_cards
     global dealer_cards
+    global user_score 
+    global dealer_score
 
     # Deal cards
     for i in range(4):
@@ -61,9 +63,9 @@ def blackjack():
         print(f"The first dealer card is: {dealer_cards[0]}")
 
         # Convert Aces from 11 to 1 if score is greater than 10
-        for i in user_cards:
-            if user_score > 10 and user_cards[i] == 11:
-                user_cards[i] == 1
+        for card in range(len(user_cards)):
+            if user_score > 10 and user_cards[card] == 11:
+                user_cards[card] == 1
                 user_score = sum(user_cards)
 
         # End game if user score has busted or is equal to 21 for a blackjack
@@ -97,22 +99,22 @@ def blackjack():
             else:
                 add_user_card()
 
-    play_again= input("Do you want to play again? Type 'y' or 'n': ")
+    # play_again= input("Do you want to play again? Type 'y' or 'n': ")
 
-    if play_again == "y":
-        system("clear")
-        user_cards = []
-        dealer_cards = []
-        user_score = 0
-        dealer_score = 0
-        blackjack()
+    # if play_again == "y":
+    #     system("clear")
+    #     user_cards = []
+    #     dealer_cards = []
+    #     user_score = 0
+    #     dealer_score = 0
+    #     blackjack()
 
 # Prompt user to initiate a game of blackjack
-initiate_game = input("Do you want to play a game of blackjack? Type 'y' or 'n': ")
-
-# If user chose 'y', run blackjack game. End if not.
-if initiate_game == "y":
+while input("Do you want to play a game of blackjack? Type 'y' or 'n': ") == "y":
+    # If user chose 'y', run blackjack game. End if not.
     system("clear")
+    user_cards = []
+    dealer_cards = []
+    #     user_score = 0
+    #     dealer_score = 0
     blackjack()
-else:
-    print("Maybe next time!")
